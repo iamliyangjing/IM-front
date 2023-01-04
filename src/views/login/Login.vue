@@ -21,6 +21,7 @@
         <el-button @click="resetForm('ruleForm')">重置</el-button>
       </el-form-item>
     </el-form>
+      <el-link type="success" @click="toRegister" id="register">前往注册</el-link>
     </el-card>
   </div>
 </template>
@@ -78,6 +79,9 @@ export default {
     },
     resetForm(formName) {
       this.$refs[formName].resetFields();
+    },
+    toRegister(){
+      this.$router.push("/register")
     }
   }
 }
@@ -90,6 +94,9 @@ export default {
   text-align: center;
 }
 .box-card {
-  width: 480px;
+  width: 800px;
+}
+#register{
+  float: right;
 }
 </style>
