@@ -111,10 +111,8 @@ export default {
   .input-box{
     display: flex;
     width: 350px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    .el-input__inner{
-    }
+    margin-top: 40px;
+    margin-bottom: 40px;
   }
   .loginTitle{
 
@@ -122,15 +120,19 @@ export default {
   .button-group{
   display: flex;
   justify-content: space-around;
+  margin-left: 20px;
   .el-button{
-    margin-right: 15px;
+    margin-right: 25px;
   }
  }
   .demo-ruleForm{
     width: 300px;
   }
   .to-register-box{
-    margin-left: 160px;
+    margin-left: 220px;
+  }
+  .el-input{
+    width: 250px;  
   }
 }
 </style>
