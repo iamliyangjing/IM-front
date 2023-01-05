@@ -7,22 +7,26 @@
         :imgSize="{ width: '330px', height: '155px' }"
         ref="verify">
     </Verify>
-    <el-card class="box-card">
-    <el-form :model="ruleForm" status-icon :rules="rules"
-             ref="ruleForm" label-width="100px" class="demo-ruleForm">
-      <el-form-item label="账号" prop="text" >
-        <el-input type="input" v-model="ruleForm.text" autocomplete="off" style="width: 500px;"></el-input>
-      </el-form-item>
-      <el-form-item label="密码" prop="password">
-        <el-input type="password" v-model="ruleForm.password" autocomplete="off" style="width: 500px;"></el-input>
-      </el-form-item>
-      <el-form-item>
-        <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
-        <el-button @click="resetForm('ruleForm')">重置</el-button>
-      </el-form-item>
-    </el-form>
-      <el-link type="success" @click="toRegister" id="register">前往注册</el-link>
-    </el-card>
+    <div class="loginBox">
+      <h3 class="loginTitle"> 欢迎登录 </h3>
+      <el-form :model="ruleForm" status-icon :rules="rules"
+              ref="ruleForm" class="demo-ruleForm">
+        <el-form-item label="账号" prop="text" class="input-box">
+          <el-input type="input" v-model="ruleForm.text" autocomplete="off" ></el-input>
+        </el-form-item>
+        <el-form-item label="密码" prop="password" class="input-box">
+          <el-input type="password" v-model="ruleForm.password" autocomplete="off" ></el-input>
+        </el-form-item>
+        <el-form-item class="button-group">
+          <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
+          <el-button @click="resetForm('ruleForm')">重置</el-button>
+        </el-form-item>
+      </el-form>
+      <div class="to-register-box">
+        <el-link type="success" @click="toRegister" id="register">前往注册</el-link>
+      </div>
+      
+    </div>
   </div>
 </template>
 
@@ -87,16 +91,46 @@ export default {
 }
 </script>
 
-<style>
-.demo-ruleForm{
-  margin-right: auto;
-  margin-left: auto;
-  text-align: center;
-}
-.box-card {
-  width: 800px;
-}
-#register{
-  float: right;
+<style lang="less">
+.loginBox {
+  position: absolute;
+  left: 0;
+  top: 15%;
+  bottom: 0;
+  right: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 450px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  box-shadow: 1px 1px 1px rgb(231, 231, 231);
+  .input-box{
+    display: flex;
+    width: 350px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    .el-input__inner{
+    }
+  }
+  .loginTitle{
+
+  }
+  .button-group{
+  display: flex;
+  justify-content: space-around;
+  .el-button{
+    margin-right: 15px;
+  }
+ }
+  .demo-ruleForm{
+    width: 300px;
+  }
+  .to-register-box{
+    margin-left: 160px;
+  }
 }
 </style>
